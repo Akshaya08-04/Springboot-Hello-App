@@ -15,12 +15,21 @@ public class HelloController {
     public String sayHelloQuery(@RequestParam String name) {
         return "Hello " + name + " from Akshaya";
     }
+    //uc3
     @GetMapping("/hello/param/{name}")
     public String sayHelloParam(@PathVariable String name) {
         return "Hello " + name + " from Akshaya";
     }
+    //uc4
     @PostMapping("/hello/post")
     public String sayHelloPost(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
+    }
+    //uc5
+    @PutMapping("/hello/put/{firstName}")
+    public String sayHelloPut(@PathVariable String firstName,
+                              @RequestParam String lastName) {
+
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
     }
 }
